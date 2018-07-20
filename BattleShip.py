@@ -4,7 +4,7 @@ from time import sleep
 
 def usership_creator(map, numtimes):
     alphabet = ascii_uppercase
-    print("If any of your ships intersect, we'll ask you to redraw your coordinates. DONT ADD SPACES ")
+    print("\n\n\n\nIf any of your ships intersect, we'll ask you to redraw your coordinates. DONT ADD SPACES ")
     for z in range(numtimes):
         size = 2 + z
         letter = alphabet[size - 2]
@@ -61,6 +61,7 @@ def shipmaker(map, numtimes):
                     break
 
 def start_game(userboard, board, preboard, cpuboard):
+    sleep(7)
     while True:
         sleep(3)
         print("\n\n\nYour Map:")
@@ -145,10 +146,11 @@ print("\n\n\n\n\n\n\n\nWelcome to BattleShip. Pointers: \n -Board is 10x10 \n -t
       "\n -Ship 1 is 'A', Ship 2 is 'B', and so on.. \n Let's start the game with four ships.")
 usership_creator(userboard,4)
 cpuboard = userboard
-print("Here's what your board looks like. Don't worry, the computer can't cheat.")
+print("\n\n\n\n\nHere's what your board looks like. Don't worry, the computer can't cheat.")
+sleep(1)
 print_board(userboard)
+sleep(6)
 print("Let's get started! Key: 'X' means the ship was hit, '#' means it missed \n It's your turn first")
-
 
 
 start_game(userboard, board, preboard, cpuboard)
