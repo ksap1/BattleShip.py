@@ -64,8 +64,8 @@ def start_game(userboard, board, preboard, cpuboard):
     sleep(7)
     while True:
         sleep(3)
-        print("\n\n\nYour Map:")
-        print_board(userboard)
+        print("\nYour targets:\n")
+        print_board(board)
         while True: #to see if the coordinate was never hit
             try:
                 userrow = int(input("\nEnter a row 1-10: "))-1
@@ -94,6 +94,9 @@ def start_game(userboard, board, preboard, cpuboard):
         if tots==100:
             print("\n\nYou Win!")
             break #if all ships were sunken
+        sleep(3)
+        print("\n\n\nYour Map:")
+        print_board(userboard)
         sleep(1)
         print("\n Waiting for your opponent's move......\n")
         sleep(3)
@@ -150,7 +153,7 @@ print("\n\n\n\n\nHere's what your board looks like. Don't worry, the computer ca
 sleep(1)
 print_board(userboard)
 sleep(6)
-print("Let's get started! Key: 'X' means the ship was hit, '#' means it missed \n It's your turn first")
+print("Let's get started! Key: 'X' means the ship was hit, '#' means it missed \n It's your turn first, choose a target to shoot your missile:")
 
 
 start_game(userboard, board, preboard, cpuboard)
