@@ -62,6 +62,7 @@ def shipmaker(map, numtimes):
 
 def start_game(userboard, board, preboard, cpuboard):
     sleep(7)
+    shipcount = 0
     while True:
         sleep(3)
         print("\nYour targets:\n")
@@ -76,11 +77,13 @@ def start_game(userboard, board, preboard, cpuboard):
             if hit == "#" or hit == "X":
                 print("You already hit that spot. Try Again")
             else: break
+
         if hit != "*":
             preboard[userrow][usercol] = "#"
             board[userrow][usercol] = "X"
             if any(hit in line for line in preboard) == False:
                 print("\nYou hit and sunk a ship!")
+                shipcount+=1
             else: print("\nYou hit!")
 
         else:
@@ -91,6 +94,8 @@ def start_game(userboard, board, preboard, cpuboard):
             for y in preboard[t]:
                 if y == "#" or y=="*":
                     tots+=1
+        sleep(1)
+        print("\n"+str(shipcount)+" out of 4 ships sunken")
         if tots==100:
             print("\n\nYou Win!")
             break #if all ships were sunken
